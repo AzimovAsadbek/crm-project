@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "./style";
 
-const Body = () => {
+const Sidebar = () => {
   return <Container>Body</Container>;
 };
 
-export default Body;
+export default Sidebar;
