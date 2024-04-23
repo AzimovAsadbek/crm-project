@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "./style";
 
 const Sidebar = () => {
-  return <Container>Body</Container>;
+  return <Container>Head</Container>;
 };
 
 export default Sidebar;
