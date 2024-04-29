@@ -1,8 +1,8 @@
 import React from "react";
 import { Container } from "./style";
 
-const Sidebar = () => {
-  return <Container>Head</Container>;
+const Root = () => {
+  return <Container>Crm project</Container>;
 };
 
-export default Sidebar;
+export default Root;
