@@ -4,6 +4,6 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <h1>Crm yarn project</h1>
+    <h1>Crm project</h1>
   </React.StrictMode>
 );
