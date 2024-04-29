@@ -1,8 +1,40 @@
 import React from "react";
 import { Container } from "./style";
+import { Navigate, Route, Routes } from "react-router-dom";
+import sidebar from "../utils/sidebar";
 
 const Root = () => {
-  return <Container>Crm project</Container>;
+  return (
+    <Container>
+      <Routes>
+        {sidebar.map((parent) => {
+          if (parent?.children?.length) {
+            return parent.children.map((child) => {
+              const ChildElement = child.element;
+              return (
+                <Route
+                  key={child.id}
+                  path={child.path}
+                  element={<ChildElement />}
+                />
+              );
+            });
+          } else {
+            const ParentElement = parent.element;
+            return (
+              <Route
+                key={parent.id}
+                path={parent.path}
+                element={<ParentElement />}
+              />
+            );
+          }
+        })}
+        <Route path="/" element={<Navigate to={"/analitika"} />} />
+        <Route path="*" element={<h1>404 not faund</h1>} />
+      </Routes>
+    </Container>
+  );
 };
 
 export default Root;

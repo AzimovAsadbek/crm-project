@@ -7,7 +7,7 @@ const Generics = () => {
   return (
     <Container>
       <h1>{location.pathname}</h1>
-      <h1>Comming coon...</h1>
+      <h1>Comming soon...</h1>
     </Container>
   );
 };
