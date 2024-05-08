@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import arrow from "../../assets/icons/arrow.svg?react";
+import exit from "../../assets/icons/exit.svg?react";
+import { NavLink } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -38,16 +40,32 @@ const Logo = styled.div`
   border-bottom: 1px solid #f8fafc;
   cursor: pointer;
   background-color: white;
+  position: sticky;
+  top: 0;
 `;
 
 const LogOut = styled(Logo)`
   display: flex;
+  position: sticky;
   font-size: 14px;
   font-weight: 500;
   margin-top: auto;
   border-top: 1px solid #f8fafc;
+  bottom: 0;
   border-bottom: 0;
   color: #253e5f;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  :hover {
+    cursor: pointer;
+    background-color: #f8fafc;
+    color: var(--activeColor);
+    & path {
+      fill: var(--activeColor);
+    }
+  }
 `;
 
 const ProfileContainer = styled.div`
@@ -92,17 +110,29 @@ const Menu = styled.div`
   flex-direction: column;
 `;
 
-const MenuItem = styled.div`
+const MenuItem = styled(NavLink)`
+  text-decoration: none;
+  color: ${({ active }) =>
+    active === "true" ? "var(--activeColor)" : "var(--primaryColor)"};
   :hover {
     cursor: pointer;
-    background-color: #f8fafc;
     color: var(--activeColor);
+    background-color: #f8fafc;
     .icon {
       & path {
         fill: var(--activeColor);
       }
     }
+    & path {
+      fill: var(--activeColor);
+    }
   }
+  & path {
+    fill: ${({ active }) => active === "true" && "var(--activeColor)"};
+  }
+
+  background-color: ${({ active }) =>
+    active === "true" ? "#f8fafc" : "inherit"};
 `;
 
 MenuItem.Title = styled.div`
@@ -112,25 +142,28 @@ MenuItem.Title = styled.div`
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: var(--primaryColor);
   .icon {
     margin-right: 16px;
   }
+  background-color: inherit;
 `;
 
 const Arrow = styled(arrow)`
   margin-left: auto;
-  transform: ${(props) => props?.active && "rotate(90deg)"};
+  transform: ${({ active }) => active === "true" && "rotate(90deg)"};
   transition: all 0.1s;
 `;
 
 const ChildWrapper = styled.div`
   padding-left: 35px;
-  height: ${(props) => (props?.active ? "fit-content" : "0px")};
-  overflow: ${(props) => (props?.active ? "visible" : "hidden")};
+  height: ${(props) => (props?.active === "true" ? "fit-content" : "0px")};
+  overflow: ${(props) => (props?.active === "true" ? "visible" : "hidden")};
 `;
 
+const Exit = styled(exit)``;
+
 export {
+  Exit,
   Arrow,
   MenuItem,
   Menu,
