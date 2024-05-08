@@ -23,15 +23,31 @@ const Root = () => {
             } else {
               const ParentElement = parent.element;
               return (
-                <Route
-                  key={parent.id}
-                  path={parent.path}
-                  element={<ParentElement />}
-                />
+                !parent.hidden && (
+                  <Route
+                    key={parent.id}
+                    path={parent.path}
+                    element={<ParentElement />}
+                  />
+                )
               );
             }
           })}
         </Route>
+
+        {sidebar.map((parent) => {
+          const ParentElement = parent.element;
+          return (
+            parent.hidden && (
+              <Route
+                key={parent.id}
+                path={parent.path}
+                element={<ParentElement />}
+              />
+            )
+          );
+        })}
+
         <Route path="/" element={<Navigate to={"/analitika"} />} />
         <Route path="*" element={<h1>404 not faund</h1>} />
       </Routes>

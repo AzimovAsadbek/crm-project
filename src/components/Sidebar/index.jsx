@@ -45,6 +45,11 @@ const Sidebar = () => {
       navigate(path);
     }
   };
+
+  const logOut = () => {
+    navigate("/login");
+  };
+
   return (
     <Container>
       <Side>
@@ -55,7 +60,7 @@ const Sidebar = () => {
           {sidebar.map((parent) => {
             const { icon: Icon } = parent;
             const active = open?.includes(parent.id);
-            return (
+            return !parent.hidden ? (
               <React.Fragment key={parent.id}>
                 <MenuItem
                   onClick={(e) => onOpen(parent, e)}
@@ -84,11 +89,11 @@ const Sidebar = () => {
                   })}
                 </ChildWrapper>
               </React.Fragment>
-            );
+            ) : null;
           })}
         </Menu>
 
-        <LogOut>
+        <LogOut onClick={logOut}>
           <Exit />
           Chiqish
         </LogOut>

@@ -46,27 +46,18 @@ const Logo = styled.div`
 
 const LogOut = styled(Logo)`
   display: flex;
-  position: sticky;
   font-size: 14px;
   font-weight: 500;
-  margin-top: auto;
   border-top: 1px solid #f8fafc;
   bottom: 0;
   border-bottom: 0;
   color: #253e5f;
-  display: flex;
   align-items: center;
   gap: 16px;
-
-  :hover {
-    cursor: pointer;
-    background-color: #f8fafc;
-    color: var(--activeColor);
-    & path {
-      fill: var(--activeColor);
-    }
-  }
 `;
+const Exit = styled(exit)``;
+
+// Profil
 
 const ProfileContainer = styled.div`
   display: flex;
@@ -159,8 +150,6 @@ const ChildWrapper = styled.div`
   height: ${(props) => (props?.active === "true" ? "fit-content" : "0px")};
   overflow: ${(props) => (props?.active === "true" ? "visible" : "hidden")};
 `;
-
-const Exit = styled(exit)``;
 
 export {
   Exit,
