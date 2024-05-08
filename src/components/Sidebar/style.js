@@ -50,7 +50,7 @@ const LogOut = styled(Logo)`
   font-weight: 500;
   border-top: 1px solid #f8fafc;
   position: sticky;
-
+  margin-bottom: auto;
   bottom: 0;
   border-bottom: 0;
   color: #253e5f;
