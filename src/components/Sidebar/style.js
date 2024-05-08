@@ -40,22 +40,27 @@ const Logo = styled.div`
   border-bottom: 1px solid #f8fafc;
   cursor: pointer;
   background-color: white;
-  position: sticky;
-  top: 0;
 `;
 
-const LogOut = styled(Logo)`
+const LogOut = styled.div`
   display: flex;
-  font-size: 14px;
-  font-weight: 500;
-  border-top: 1px solid #f8fafc;
-  position: sticky;
-  margin-bottom: auto;
-  bottom: 0;
-  border-bottom: 0;
-  color: #253e5f;
   align-items: center;
   gap: 16px;
+
+  position: fixed;
+  bottom: 0;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #253e5f;
+
+  border-top: 1px solid #f8fafc;
+  border-bottom: 0;
+  background-color: white;
+  cursor: pointer;
+
+  padding: 16px 24px;
 `;
 const Exit = styled(exit)``;
 
