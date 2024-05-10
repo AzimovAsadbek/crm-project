@@ -101,6 +101,7 @@ const Sidebar = () => {
 
       <Body>
         <Navbar />
+
         <Wrapper>
           <Outlet />
         </Wrapper>
