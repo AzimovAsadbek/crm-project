@@ -54,6 +54,7 @@ const SearchIcon = styled(search)`
 const Section = styled.div`
   display: flex;
   align-items: center;
+  gap: 8px;
 `;
 
 const Timer = styled.div`
@@ -62,7 +63,6 @@ const Timer = styled.div`
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-  padding: 5px;
 `;
 
 export { Container, InputWrapper, Input, SearchIcon, Section, Timer };
