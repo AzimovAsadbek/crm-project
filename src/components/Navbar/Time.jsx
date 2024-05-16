@@ -4,30 +4,31 @@ import { Section, Timer } from "./style";
 const Time = () => {
   const [date, setDate] = useState({ hour: "", minute: "", status: "" });
   const GetSeconds = () => {
-    const timer = setInterval(() => {
-      const date = new Date();
-      let hour = date.getHours();
-      let minute = date.getMinutes();
+    const date = new Date();
+    let hour = date.getHours();
+    let minute = date.getMinutes();
 
-      if (hour > 12) {
-        hour -= 12;
-        setDate((d) => {
-          return { ...d, status: "PM" };
-        });
-      } else
-        setDate((d) => {
-          return { ...d, status: "AM" };
-        });
-
-      if (hour < 10) hour = "0" + hour;
-
-      if (minute < 10) minute = "0" + minute;
+    if (hour > 12) {
+      hour -= 12;
       setDate((d) => {
-        return { ...d, hour, minute };
+        return { ...d, status: "PM" };
       });
-    }, 1000);
+    } else
+      setDate((d) => {
+        return { ...d, status: "AM" };
+      });
+
+    if (hour < 10) hour = "0" + hour;
+
+    if (minute < 10) minute = "0" + minute;
+    setDate((d) => {
+      return { ...d, hour, minute };
+    });
     return () => clearInterval(timer);
   };
+  const timer = setInterval(() => {
+    GetSeconds();
+  }, 1000);
 
   useEffect(() => {
     GetSeconds();

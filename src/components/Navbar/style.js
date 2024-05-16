@@ -7,8 +7,11 @@ const Container = styled.div`
   justify-content: space-between;
 
   height: 63px;
+  position: sticky;
+  top: 0;
 
   padding: 0 16px 0 24px;
+  background-color: white;
 `;
 
 const InputWrapper = styled.div`

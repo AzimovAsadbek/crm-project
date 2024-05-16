@@ -10,13 +10,13 @@ const Navbar = () => {
     <Container>
       <Input
         width={500}
-        borderRadius={8}
+        borderradius={8}
         height={40}
-        iconLeft={<SearchIcon />}
+        iconleft={<SearchIcon />}
         fontWeight={500}
         fontSize={14}
-        lineHeight={20}
-        placeholderStyle={{
+        lineheight={20}
+        placeholderstyle={{
           color: "#bbc3cd",
           fontWeight: 500,
           fontSize: 14,

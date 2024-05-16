@@ -2,12 +2,12 @@ import React from "react";
 import { Container, Input } from "./style";
 
 const GenericInput = (props) => {
-  const { iconLeft, iconRight } = props;
+  const { iconleft, iconright } = props;
   return (
     <Container {...props}>
-      {iconLeft && iconLeft}
+      {iconleft && iconleft}
       <Input {...props} />
-      {iconRight && iconRight}
+      {iconright && iconright}
     </Container>
   );
 };

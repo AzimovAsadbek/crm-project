@@ -24,6 +24,9 @@ const Side = styled.div`
 
 const Body = styled.div`
   flex: 1;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 100vh;
 `;
 
 const Wrapper = styled.div`
@@ -40,12 +43,17 @@ const Logo = styled.div`
   border-bottom: 1px solid #f8fafc;
   cursor: pointer;
   background-color: white;
+
+  z-index: 1;
+  position: sticky;
+  top: 0;
 `;
 
 const LogOut = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+  width: 280px;
 
   position: fixed;
   bottom: 0;
@@ -56,7 +64,6 @@ const LogOut = styled.div`
   color: #253e5f;
 
   border-top: 1px solid #f8fafc;
-  border-bottom: 0;
   background-color: white;
   cursor: pointer;
 
