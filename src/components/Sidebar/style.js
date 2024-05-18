@@ -26,6 +26,7 @@ const Body = styled.div`
   flex: 1;
   overflow: hidden;
   overflow-y: scroll;
+  min-width: calc(1440px - 280px);
   height: 100vh;
 `;
 
@@ -54,10 +55,9 @@ const LogOut = styled.div`
   align-items: center;
   gap: 16px;
   width: 280px;
-
-  position: fixed;
+  position: sticky;
   bottom: 0;
-
+  margin-top: auto;
   font-size: 14px;
   font-weight: 500;
   line-height: 28px;

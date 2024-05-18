@@ -93,9 +93,31 @@ const Counter = styled(Title)`
   font-size: 40px;
 `;
 
-const Arrow = styled(arrowUp)`
+export const Arrow = styled(arrowUp)`
   width: 24px;
   height: 24x;
   margin-right: 8px;
 `;
-export { Container, Wrapper, Card, Section, Plus, Counter, Arrow, SubCard };
+
+const FooterWrapper = styled.div`
+  display: flex;
+  margin-top: 24px;
+  gap: 17px;
+`;
+
+FooterWrapper.Email = styled.div`
+  flex: 2;
+`;
+FooterWrapper.Moliya = styled.div`
+  flex: 1;
+`;
+export {
+  FooterWrapper,
+  Container,
+  Wrapper,
+  Card,
+  Section,
+  Plus,
+  Counter,
+  SubCard,
+};

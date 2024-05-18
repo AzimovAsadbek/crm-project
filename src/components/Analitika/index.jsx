@@ -1,21 +1,25 @@
 import React from "react";
 import {
-  Arrow,
-  Card,
+  FooterWrapper,
   Container,
-  Counter,
-  Plus,
-  Section,
-  SubCard,
   Wrapper,
+  Card,
+  Section,
+  Plus,
+  Counter,
+  Arrow,
+  SubCard,
 } from "./style";
 import Title from "../Generics/Title";
 import SubTitle from "../Generics/SubTitle";
 import privateData, { mediaData } from "../../utils/analitics";
+import Email from "./Email/Email";
+import Moliya from "./Moliya/Moliya";
 
 const Analitika = () => {
   return (
     <Container>
+      {/* Top */}
       <Title mb={16}>Analitika</Title>
       <Wrapper gap={24}>
         {privateData?.map((v) => {
@@ -33,7 +37,8 @@ const Analitika = () => {
               {/* bottom */}
               <Section title={v.title}>
                 <Title>
-                  <Arrow /> <Counter>{v.count}</Counter>
+                  <Arrow />
+                  <Counter>{v.count}</Counter>
                 </Title>
                 <Img />
               </Section>
@@ -41,6 +46,8 @@ const Analitika = () => {
           );
         })}
       </Wrapper>
+
+      {/* Bottom  */}
       <SubTitle mt={24} mb={16}>
         Ijtimoiy tarmoqlar
       </SubTitle>
@@ -66,6 +73,22 @@ const Analitika = () => {
           );
         })}
       </Wrapper>
+
+      <FooterWrapper>
+        <FooterWrapper.Email>
+          <SubTitle mt={24} mb={16} count={12}>
+            Email habarlar{" "}
+          </SubTitle>
+          <Email />
+        </FooterWrapper.Email>
+
+        <FooterWrapper.Moliya>
+          <SubTitle mt={24} mb={16}>
+            Moliya
+          </SubTitle>
+          <Moliya />
+        </FooterWrapper.Moliya>
+      </FooterWrapper>
     </Container>
   );
 };
