@@ -3,6 +3,7 @@ import SubTitle from "../../Generics/SubTitle";
 import { Info, Wrapper, Section } from "./emailStyle";
 
 const Email = () => {
+  // Eemail
   return (
     <Wrapper>
       {email.map((eml) => {

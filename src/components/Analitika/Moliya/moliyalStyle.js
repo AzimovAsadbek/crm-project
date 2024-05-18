@@ -2,7 +2,6 @@ import styled from "styled-components";
 import arrow from "../../../assets/icons/rightArrow.svg?react";
 
 const Wrapper = styled.div`
-  /* height: 280px; */
   padding: 24px;
   border-radius: 8px;
   border: 1px solid #f0f0f0;
