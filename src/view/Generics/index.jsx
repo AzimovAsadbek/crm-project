@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "./style";
 import { useLocation } from "react-router-dom";
+import BreadCrumb from "../../components/Generics/BroadComb";
 
 const Generics = () => {
   const location = useLocation();

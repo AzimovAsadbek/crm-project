@@ -16,6 +16,7 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import Profile from "./profile";
 import sidebar from "../../utils/sidebar";
+import BroadCrumb from "../Generics/BroadComb";
 
 const Sidebar = () => {
   const [open, setOpen] = useState([]);
@@ -31,7 +32,9 @@ const Sidebar = () => {
     setOpen(path || []);
   }, []);
 
-  const onOpen = ({ id, path, children }, e) => {
+  const onOpen = ({ id, path, children, title }, e) => {
+    e.preventDefault();
+
     if (open?.includes(id)) {
       const data = open?.filter((v) => v !== id);
       localStorage.setItem("open", JSON.stringify(data));
@@ -41,13 +44,17 @@ const Sidebar = () => {
       setOpen([...open, id]);
     }
     if (!children) {
-      e.preventDefault();
-      navigate(path);
+      navigate(path, { state: { parent: title } });
     }
   };
 
   const logOut = () => {
     navigate("/login");
+  };
+
+  const onChildClick = (parent, child, path, e) => {
+    e.preventDefault();
+    navigate(path, { state: { parent, child } });
   };
 
   return (
@@ -77,6 +84,9 @@ const Sidebar = () => {
                   {parent?.children?.map((child) => {
                     return (
                       <MenuItem
+                        onClick={(e) =>
+                          onChildClick(parent.title, child.title, child.path, e)
+                        }
                         key={child?.id}
                         to={child.path}
                         active={location.pathname
@@ -101,8 +111,8 @@ const Sidebar = () => {
 
       <Body>
         <Navbar />
-
         <Wrapper>
+          <BroadCrumb />
           <Outlet />
         </Wrapper>
       </Body>
