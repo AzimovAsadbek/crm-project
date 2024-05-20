@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 const BroadCrumb = () => {
   const location = useLocation();
-
+  //
   return (
     location.state?.parent !== "Analitika" && (
       <Container title={location.state?.parent}>
