@@ -7,14 +7,25 @@ const Wrapper = styled.div`
   border: 1px solid #f0f0f0;
 `;
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 const Section = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: ${({ mt = 0, mr = 0, mb = 0, ml = 0 }) =>
+    `${mt}px ${mr}px ${mb}px ${ml}px`};
+`;
+
+const CardWrappper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 48px;
+  height: 72px;
+  border-radius: 24px;
+  border: 1px solid #f0f0f0;
+  background-color: ${({ active }) =>
+    active === "true" ? "#1890FF" : "white"};
+  cursor: pointer;
 `;
 
 export const ArrowIcon = styled(arrow)`
@@ -26,4 +37,4 @@ export const ArrowIcon = styled(arrow)`
     }
   }
 `;
-export { Wrapper, Container, Section };
+export { Wrapper, Section, CardWrappper };
