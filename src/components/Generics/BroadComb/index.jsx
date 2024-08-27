@@ -4,7 +4,9 @@ import { useLocation } from "react-router-dom";
 
 const BroadCrumb = () => {
   const location = useLocation();
-  return location.state?.parent !== "Analitika" ? (
+
+  return location.state?.parent !== "Analitika" &&
+    location.pathname !== "/analitika" ? (
     <Container title={location.state?.parent}>
       <Title>{location.state?.parent}</Title>
       {location.state?.child && <Icon />}
